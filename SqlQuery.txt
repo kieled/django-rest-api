@@ -1,0 +1,19 @@
+select
+    count(id) as count,
+    brand_id
+from
+    notebooks_notebook
+group by
+    brand_id
+order by
+    count(id) desc;
+
+select
+    (round(diagonal::numeric * 2, 0) / 2)::float as size,
+    count(id)
+from
+    public.notebooks_notebook
+group by
+    size
+order by
+    size;
